@@ -1,0 +1,1 @@
+console.log('AI Workspace Worker started')
