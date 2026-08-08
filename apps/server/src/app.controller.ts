@@ -1,10 +1,10 @@
 import { Controller, Get } from '@nestjs/common';
 import type { User } from '@ai-workspace/shared';
 
-@Controller()
+@Controller('health')
 export class AppController {
 
-  @Get('health')
+  @Get()
   getHealth(): User {
     return {
       id: '1',
