@@ -1,5 +1,6 @@
-import { Controller, Get, Param, Post, Body } from '@nestjs/common';
+import { Controller, Get, Param, Post, Body, NotFoundException } from '@nestjs/common';
 import { UsersService } from './users.service';
+import { CreateUserDto } from './dto/create-user.dto';
 
 @Controller('users')
 export class UsersController {
@@ -12,11 +13,17 @@ export class UsersController {
 
     @Get(':id')
     findOne(@Param('id') id: string) {
-        return this.usersService.findOne(id);
+        const user = this.usersService.findOne(id);
+
+        if (!user) {
+            throw new NotFoundException('用户不存在');
+        }
+
+        return user
     }
 
-    @Post('add')
-    addUser(@Body() user: { id: string; username: string; email?: string }) {
-        return this.usersService.addUser(user);
+    @Post()
+    addUser(@Body() createUserDto: CreateUserDto) {
+        return this.usersService.addUser(createUserDto);
     }
 }

@@ -1,1 +1,98 @@
-node_modules
+# =====================
+# Dependencies
+# =====================
+node_modules/
+.pnpm-store/
+
+# =====================
+# Build outputs
+# =====================
+dist/
+build/
+out/
+*.tsbuildinfo
+.turbo/
+
+# =====================
+# Environment variables (contains secrets!)
+# =====================
+.env
+.env.*
+!.env.example
+!.env.template
+
+# =====================
+# OS generated files
+# =====================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# =====================
+# IDE / Editor configs
+# =====================
+.idea/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+*.sublime-workspace
+*.sublime-project
+
+# VS Code (keep shared configs)
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# AI agents / assistants (personal, not for team)
+.agents/
+.claude/
+.windsurf/
+.cursor/
+skills-lock.json
+
+# =====================
+# Logs
+# =====================
+logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# =====================
+# Test coverage
+# =====================
+coverage/
+.nyc_output/
+
+# =====================
+# Runtime / temp files
+# =====================
+pids/
+*.pid
+*.seed
+*.pid.lock
+.temp/
+.tmp/
+
+# =====================
+# Prisma generated client (auto-generated, not source)
+# =====================
+**/generated/prisma/
+
+# =====================
+# Misc
+# =====================
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
